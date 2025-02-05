@@ -6,7 +6,6 @@ import torch.nn as nn
 import torch.optim as optim
 
 
-# Define a dummy DCGAN-like model (but we don't run it)
 class Generator(nn.Module):
     def __init__(self):
         super(Generator, self).__init__()
@@ -57,7 +56,7 @@ class Discriminator(nn.Module):
 # Aiohttp server handler
 async def handle_print(request):
     process_name = request.query.get("process_name", "No Process Name Provided")
-    print(f"Received Process Name: {process_name}")
+    print(f"{process_name}")
     return web.json_response({"message": f"Printed: {process_name}"})
 
 
